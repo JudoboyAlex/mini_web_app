@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSCA 5028 Web App Project</title>
+  </head>
+  <body>
+    <h1>CSCA 5028 Web App Project</h1>
+    <div id="inputContainer">
+      <input id="inputData" /><button id="submitButton">Submit</button>
+    </div>
+    <div id="outputContainer"></div>
+
+    <script>
+      // Get references to the input field, button, and output container
+      const inputField = document.getElementById("inputData");
+      const submitButton = document.getElementById("submitButton");
+      const outputContainer = document.getElementById("outputContainer");
+
+      // Add an event listener to the button
+      submitButton.addEventListener("click", function () {
+        const userInput = inputField.value;
+        if (userInput.trim() !== "") {
+          const outputParagraph = document.createElement("p");
+          outputParagraph.textContent = userInput;
+          outputContainer.appendChild(outputParagraph);
+          inputField.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>
